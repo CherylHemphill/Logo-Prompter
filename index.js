@@ -1,6 +1,6 @@
 // Require packages needed for this application (inquirer, shapes.js)
-const { default: inquirer } = require("inquirer");
-const shapes = require('./lib/shapes');
+const inquirer = require("inquirer");
+const { Square, RoundedSquare, Circle, Triangle } = require('./lib/shapes');
 const fs = require("fs");
 
 //Prompt questions to generate logo preferences
@@ -43,24 +43,30 @@ const promptUser = () => {
 
  // Function to generate logo.svg file in the examples folder and print "Generated logo.svg" to console 
  const generateSVG = (data) => {
+    console.log('Data:', data); // Debugging line
     const { text, textColor, shape, shapeColor } = data;
-  
+    console.log('Shape:', shape); // Debugging line
+    console.log('Shape Color:', shapeColor); // Debugging line
+
     let svgCode = `<svg xmlns="http://www.w3.org/2000/svg" width="300" height="200" viewBox="0 0 300 200">\n`;
   
     let shapeElement;
 
   switch (shape) {
+    case 'Square':
+      shapeElement = new Square();
+      break;
+      case 'Rounded Square':
+      shapeElement = new RoundedSquare();
+      break;
     case 'Circle':
       shapeElement = new Circle();
       break;
     case 'Triangle':
       shapeElement = new Triangle();
       break;
-    case 'Square':
-      shapeElement = new Square();
-      break;
     default:
-      break;
+      throw new Error('Sorry. Something went wrong with your shape.');
   }
 
   shapeElement.setColor(shapeColor);
