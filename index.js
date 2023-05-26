@@ -23,7 +23,7 @@ const promptUser = () => {
         message:'What color would you like your text color to be?',
       },
       {
-        type: 'checkbox',
+        type: 'list',
         name: 'shape',
         message: 'Which shape would you like?',
         choices: [
@@ -48,32 +48,43 @@ const promptUser = () => {
     console.log('Shape:', shape); // Debugging line
     console.log('Shape Color:', shapeColor); // Debugging line
 
+
+    
     let svgCode = `<svg xmlns="http://www.w3.org/2000/svg" width="300" height="200" viewBox="0 0 300 200">\n`;
   
     let shapeElement;
+    let textX, textY;
 
-  switch (shape) {
-    case 'Square':
-      shapeElement = new Square();
-      break;
+    switch (shape) {
+      case 'Square':
+        shapeElement = new Square();
+        textX = 115; // Adjust for square center x-coordinate
+        textY = 120; // Adjust for square center y-coordinate
+        break;
       case 'Rounded Square':
-      shapeElement = new RoundedSquare();
-      break;
-    case 'Circle':
-      shapeElement = new Circle();
-      break;
-    case 'Triangle':
-      shapeElement = new Triangle();
-      break;
-    default:
-      throw new Error('Sorry. Something went wrong with your shape.');
-  }
+        shapeElement = new RoundedSquare();
+        textX = 100; // Adjust for rounded square center x-coordinate
+        textY = 120; // Adjust for rounded square center y-coordinate
+        break;
+      case 'Circle':
+        shapeElement = new Circle();
+        textX = 120; // Adjust for circle center x-coordinate
+        textY = 125; // Adjust for circle center y-coordinate
+        break;
+      case 'Triangle':
+        shapeElement = new Triangle();
+        textX = 150; // Adjust using custom logic for triangle
+        textY = 165; // Adjust using custom logic for triangle
+        break;
+      default:
+        throw new Error('Sorry. Something went wrong with your shape.');
+    }
 
   shapeElement.setColor(shapeColor);
   svgCode += shapeElement.render();
   
-    svgCode += `<text x="150" y="180" text-anchor="middle" fill="${textColor}">${text}</text>\n`;
-  
+     svgCode += `<text x="${textX}" y="${textY}" text-anchor="middle" fill="${textColor}" font-size="60">${text}</text>\n`;
+    
     svgCode += `</svg>`;
   
     return svgCode;
