@@ -18,6 +18,12 @@ In your terminal run the command <strong>npm i -s</strong> to install dependenci
 ## Usage
 Once your Logo has been created use it where you need it!
 
+
+https://github.com/CherylHemphill/Logo-Prompter/assets/126039394/fc5db475-c0ea-408b-b495-651e9aa49bd6
+
+
+
+
 ## License
 
 This project is licensed under the [MIT](https://opensource.org/licenses/MIT) license. Click the badge above for more details.
