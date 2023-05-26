@@ -13,7 +13,7 @@ I would like to be able to generate Logo's without having to use a graphic desig
 * [Tests](#tests)
 
 ## Installation
-In your terminal run the command npm i -s to install dependencies. <br> Next run the command node index.js <br> follow the prompted questions. <br> then using your file system double click the image icon to open in a web browser. <br> Copy & paste the source code in the logo.svg file to use it in other applications.
+In your terminal run the command <strong>npm i -s</strong>to install dependencies. <br> Next run the command <strong>node index.js </strong><br> follow the prompted questions. <br> then using your file system double click the image icon to open in a web browser. <br> Copy & paste the source code in the logo.svg file to use it in other applications.
 
 ## Usage
 Once your Logo has been created use it where you need it!
@@ -27,7 +27,7 @@ This project is licensed under the [MIT](https://opensource.org/licenses/MIT) li
 [Contributor Covenant](https://www.contributor-covenant.org/) 
 
 ## Tests
-Tests run with Jest. Jest dependency should be installed with your initial npm i command.<br> In your terminal you can run the command npm run test.
+Tests run with Jest. Jest dependency should be installed with your initial npm i command.<br> In your terminal you can run the command <strong>npm run test</strong>.
 
 ## Questions
 For any questions, please contact me via:
